@@ -23,7 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="listBlog" parameterType="String" resultMap="BlogResult">
         SELECT * FROM t_blog
         <where>
-            <if test="title!=null and title!=''">
+            <if test="_parameter!=null and _parameter!=''">
                 and title like "%"#{title}"%"
             </if>
         </where>

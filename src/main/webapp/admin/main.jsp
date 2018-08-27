@@ -28,6 +28,14 @@
             if($('#tabs').tabs('exists',text)){
                 //如果存在 显示
                 $("#tabs").tabs("select",text);
+                var selTab = $('#tabs').tabs('getSelected');
+                $('#tabs').tabs('update', {
+                    tab: selTab,
+                    options: {
+                        content:"<iframe frameborder=0 scrolling='auto' style='width:100%;height:100%' src='${blog}/admin/"+url+"'></iframe>"
+                    }
+                })
+
             }else{
                 //如果不存在 则新建一个
                 $("#tabs").tabs('add',{
