@@ -1,5 +1,7 @@
 package ssm.blog.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,6 +16,7 @@ public class Blog {
 	private Integer id;
 	private String title;
 	private String summary;
+	@JSONField(format="yyyy-MM-dd")
 	private Date releaseDate;
 	private Integer clickHit;
 	private Integer replyHit;
