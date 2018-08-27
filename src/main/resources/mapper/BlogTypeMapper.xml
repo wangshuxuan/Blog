@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssm.blog.dao.BlogTypeMapper">
+    <resultMap id="BlogTypeResult" type="BlogType">
+        <id property="id" column="id" />
+        <result property="typeName" column="type_name"/>
+        <result property="orderNum" column="order_num"/>
+        <result property="blogCount" column="blogCount"/>
+    </resultMap>
+
+    <select id="listBlogTypeByPage" resultMap="BlogTypeResult">
+        select * from t_blogtype
+    </select>
+
+    <insert id="saveBlogType" parameterType="BlogType">
+        insert into t_blogtype
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="typeName != null">
+                typeName,
+            </if>
+            <if test="orderNum != null">
+                orderNum,
+            </if>
+        </trim>
+        <trim prefix="values(" suffix=")" suffixOverrides=",">
+            <if test="typeName!=null and typeName!=''">
+                #{typeName},
+            </if>
+            <if test="orderNum!=null and orderNum!=''">
+                #{orderNum},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateBlogType" parameterType="BlogType">
+        update t_blogtype
+        <set>
+            <if test="typeName != null">
+                typeName = #{typeName},
+            </if>
+            <if test="orderNum != null">
+                orderNum = #{orderNum},
+            </if>
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </update>
+
+    <delete id="deleteBlogByTypeById" parameterType="Integer">
+        delete from t_blogtype
+        <where>
+            id = #{id}
+        </where>
+    </delete>
+
+    <select id="getBlogTypeData" resultMap="BlogTypeResult">
+        select * from t_blogtype
+    </select>
+
+</mapper>
