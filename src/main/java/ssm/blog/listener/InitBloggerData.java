@@ -3,6 +3,7 @@ package ssm.blog.listener;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 import ssm.blog.entity.BlogType;
 import ssm.blog.entity.Blogger;
 import ssm.blog.entity.Link;
@@ -21,6 +22,7 @@ import java.util.List;
  * @date 2018/8/24 16:47
  * 监听程序初始化
  */
+@Component
 public class InitBloggerData implements ServletContextListener, ApplicationContextAware {
 
     private static ApplicationContext applicationContext;
@@ -57,6 +59,6 @@ public class InitBloggerData implements ServletContextListener, ApplicationConte
     }
 
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-
+        InitBloggerData.applicationContext=applicationContext;
     }
 }
