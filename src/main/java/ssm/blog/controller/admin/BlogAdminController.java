@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import ssm.blog.entity.Blog;
-import ssm.blog.entity.Blogger;
 import ssm.blog.service.BlogService;
 import ssm.blog.utils.DatagridResult;
 import ssm.blog.utils.Result;
