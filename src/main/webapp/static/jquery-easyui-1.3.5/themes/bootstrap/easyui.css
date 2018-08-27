@@ -849,7 +849,6 @@ a.l-btn-plain span.l-btn-left {
 a.l-btn span span.l-btn-text {
   position: relative;
   display: inline-block;
-  vertical-align: top;
   top: 4px;
   width: auto;
   height: 16px;

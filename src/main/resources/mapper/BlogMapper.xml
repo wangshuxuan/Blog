@@ -82,7 +82,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         where id=#{id}
 	</update>
 
-    <delete id="deleteBlog" parameterType="java.lang.Integer">
+    <delete id="deleteById" parameterType="java.lang.Integer">
         DELETE FROM t_blog
         where id=#{id}
     </delete>

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import ssm.blog.entity.Blog;
+import ssm.blog.entity.Blogger;
 import ssm.blog.service.BlogService;
 import ssm.blog.utils.DatagridResult;
 import ssm.blog.utils.Result;
@@ -22,17 +23,34 @@ public class BlogAdminController {
     @Autowired
     private BlogService blogService;
 
-    @RequestMapping(value = "save.do")
+    @RequestMapping(value = "/save.do")
     @ResponseBody
     public Result addBlog(Blog blog) {
-        blogService.addBlog(blog);
+        if (blog.getId() == null) {
+            blogService.addBlog(blog);
+        }else blogService.updateBlog(blog);
         return new Result(true);
     }
 
-    @RequestMapping(value = "listBlog.do")
+    @RequestMapping(value = "/listBlog.do")
     @ResponseBody
     public DatagridResult listBolg(@RequestParam(defaultValue = "1") Integer page, Integer rows, String title) {
         DatagridResult result = blogService.listBlogByPage(page, rows, title);
         return result;
     }
+
+    @RequestMapping(value = "/delete.do")
+    @ResponseBody
+    public Result deleteBlogByIds(String ids) {
+        blogService.deleteBlogByIds(ids);
+        return new Result(true);
+    }
+
+    @RequestMapping(value = "/get.do")
+    @ResponseBody
+    public Blog getBlogToShowById(Integer id) {
+        Blog blog = blogService.getBlogToShowById(id);
+        return blog;
+    }
+
 }

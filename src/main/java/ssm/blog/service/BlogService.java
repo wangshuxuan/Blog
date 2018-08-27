@@ -12,4 +12,10 @@ public interface BlogService {
     void addBlog(Blog blog);
 
     DatagridResult listBlogByPage(Integer page, Integer rows, String title);
+
+    void deleteBlogByIds(String ids);
+
+    Blog getBlogToShowById(Integer id);
+
+    void updateBlog(Blog blog);
 }

@@ -37,4 +37,20 @@ public class BlogServiceImpl implements BlogService {
         result.setRows(list);
         return result;
     }
+
+    public void deleteBlogByIds(String ids) {
+        String[] idStr = ids.split(",");
+        for (String id : idStr) {
+            blogMapper.deleteById(Integer.parseInt(id));
+        }
+    }
+
+    public Blog getBlogToShowById(Integer id) {
+        Blog blog = blogMapper.getById(id);
+        return blog;
+    }
+
+    public void updateBlog(Blog blog) {
+        blogMapper.updateBlog(blog);
+    }
 }

@@ -69,7 +69,7 @@
     </select>
 
     <select id="getById" parameterType="Integer" resultMap="BlogTypeResult">
-        SELECT typeName FROM t_blogtype
+        SELECT id,typeName FROM t_blogtype
         <where>
             id = #{id}
         </where>

@@ -16,4 +16,10 @@ public interface BlogMapper {
 
 
     List<Blog> listBlog(String title);
+
+    void deleteById(int i);
+
+    Blog getById(Integer id);
+
+    void updateBlog(Blog blog);
 }
