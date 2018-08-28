@@ -89,6 +89,13 @@
             $("#password2").val("");
             $("#dlg").dialog("close"); //关闭对话框
         }
+
+        /**
+         * 登出
+         */
+        function logout() {
+            window.location.href = "${blog}/blogger/logout.do"
+        }
     </script>
 </head>
 <body class="easyui-layout">

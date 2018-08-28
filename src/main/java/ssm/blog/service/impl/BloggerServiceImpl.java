@@ -23,4 +23,16 @@ public class BloggerServiceImpl implements BloggerService {
     public void updateBlogger(Blogger blogger) {
         bloggerMapper.updateBlogger(blogger);
     }
+
+    public Blogger login(Blogger blogger) {
+        Blogger bUser = bloggerMapper.getBloggerByName(blogger.getUserName());
+        if (bUser == null) {
+            //用户名不存在
+            throw new RuntimeException("用户名不存在!");
+        }else if (!bUser.getPassword().equals(blogger.getPassword())) {
+            //密码错误
+            throw new RuntimeException("密码错误!");
+        }
+        return bUser;
+    }
 }

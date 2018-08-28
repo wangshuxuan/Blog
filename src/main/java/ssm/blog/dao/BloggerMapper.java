@@ -13,4 +13,6 @@ public interface BloggerMapper {
     Blogger getBloggerData();
 
     void updateBlogger(Blogger blogger);
+
+    Blogger getBloggerByName(String userName);
 }

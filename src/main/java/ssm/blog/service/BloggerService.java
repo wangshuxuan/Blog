@@ -11,4 +11,6 @@ public interface BloggerService {
     Blogger getBloggerData();
 
     void updateBlogger(Blogger blogger);
+
+    Blogger login(Blogger blogger);
 }
