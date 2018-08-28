@@ -29,7 +29,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<div class="blog"><strong>熊平的博客</strong></div>
+				<div class="blog"><strong>王树轩的博客</strong></div>
 			</div>
 			<div class="col-md-8">
 				<iframe style="float:right" width="420" scrolling="no" height="60" frameborder="0"
@@ -208,7 +208,7 @@
 		<div class="row">
 			<div class="col-md-12" >
 				<div class="footer" align="center" style="padding-top: 120px" >
-					<font>Copyright © 2012-2017 熊平SSM个人博客系统 版权所有</font>
+					<font>Copyright © 2012-2017 王树轩SSM个人博客系统 版权所有</font>
 					  
 				</div>
 			</div>			

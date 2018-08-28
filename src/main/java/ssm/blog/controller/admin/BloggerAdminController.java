@@ -53,4 +53,12 @@ public class BloggerAdminController {
 
         return new Result(true);
     }
+
+    @RequestMapping(value = "/modtifyPassword.do")
+    @ResponseBody
+    public Result modtifyPassword(Blogger blogger) {
+        bloggerService.updateBlogger(blogger);
+        return new Result(true);
+    }
+
 }
