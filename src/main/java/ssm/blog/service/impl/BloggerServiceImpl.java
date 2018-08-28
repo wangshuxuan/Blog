@@ -19,4 +19,8 @@ public class BloggerServiceImpl implements BloggerService {
     public Blogger getBloggerData() {
         return bloggerMapper.getBloggerData();
     }
+
+    public void updateBlogger(Blogger blogger) {
+        bloggerMapper.updateBlogger(blogger);
+    }
 }

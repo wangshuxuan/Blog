@@ -11,4 +11,6 @@ public interface BloggerMapper {
 
     //查询信息
     Blogger getBloggerData();
+
+    void updateBlogger(Blogger blogger);
 }

@@ -9,4 +9,6 @@ import ssm.blog.entity.Blogger;
  */
 public interface BloggerService {
     Blogger getBloggerData();
+
+    void updateBlogger(Blogger blogger);
 }
