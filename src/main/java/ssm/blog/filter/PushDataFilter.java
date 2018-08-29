@@ -1,9 +1,7 @@
-package ssm.blog.listener;
+package ssm.blog.filter;
 
-import org.springframework.beans.BeansException;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
-import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 import ssm.blog.entity.BlogType;
 import ssm.blog.entity.Blogger;
 import ssm.blog.entity.Link;
@@ -12,25 +10,22 @@ import ssm.blog.service.BlogTypeService;
 import ssm.blog.service.BloggerService;
 import ssm.blog.service.LinkService;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
+import javax.servlet.*;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * @author wangshuxuan
- * @date 2018/8/24 16:47
- * 监听程序初始化
+ * @date 2018/8/29 15:32
+ * 自定义过滤器
  */
-@Component
-public class InitBloggerData implements ServletContextListener, ApplicationContextAware {
+public class PushDataFilter implements Filter {
 
-    private static ApplicationContext applicationContext;
+    private static WebApplicationContext applicationContext;
 
-    public void contextInitialized(ServletContextEvent sce) {
+    private static ServletContext application;
 
-        //先获取servlet上下文
-        ServletContext application = sce.getServletContext();
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         //同上，获取博客类别信息service
         BlogTypeService blogTypeService = applicationContext.getBean(BlogTypeService.class);
         //获取博主信息service
@@ -50,15 +45,16 @@ public class InitBloggerData implements ServletContextListener, ApplicationConte
         //获取友情链接信息
         List<Link> linkList = linkService.getTotalData();
         application.setAttribute("linkList",linkList);
-        //application.setAttribute("blogList",blogService);
 
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 
-    public void contextDestroyed(ServletContextEvent sce) {
-
+    public void init(FilterConfig filterConfig) throws ServletException {
+        application = filterConfig.getServletContext();
+        applicationContext = WebApplicationContextUtils.getWebApplicationContext(application);
     }
 
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        InitBloggerData.applicationContext=applicationContext;
+    public void destroy() {
+
     }
 }

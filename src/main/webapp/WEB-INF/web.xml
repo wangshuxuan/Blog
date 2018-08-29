@@ -14,10 +14,19 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-    <!-- 添加获取博主信息的监听器 -->
+    <!--&lt;!&ndash; 添加获取博主信息的监听器 &ndash;&gt;
     <listener>
         <listener-class>ssm.blog.listener.InitBloggerData</listener-class>
-    </listener>
+    </listener>-->
+    <!-- 自定义过滤器 -->
+    <filter>
+        <filter-name>pushDataFilter</filter-name>
+        <filter-class>ssm.blog.filter.PushDataFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>pushDataFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <!--spring mvc核心servlet-->
     <servlet>
         <servlet-name>dispatcherServlet</servlet-name>
