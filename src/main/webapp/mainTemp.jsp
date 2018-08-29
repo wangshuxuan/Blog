@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/blog.css">
 <script src="${pageContext.request.contextPath}/static/bootstrap3/js/jquery-1.11.2.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/bootstrap3/js/bootstrap.min.js"></script>
-<title>${title }</title>
+<title>${title}</title>
 <script type="text/javascript">
 	function changeClass(obj) {
 		var li = obj.parentNode; //获取父节点
@@ -39,9 +39,9 @@
 		</div>
 				
 		<div class="row">		  	  
-			  <div class="col-xs-9">
+			  <%--<div class="col-xs-9">
 				  <jsp:include page="${commonPage}"/>
-			  </div>	
+			  </div>--%>
 			  <div class="col-xs-3">
 				  <jsp:include page="/foreground/blog/rightList.jsp"/>		  	
 			  </div>		  

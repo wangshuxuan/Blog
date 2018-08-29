@@ -4,7 +4,7 @@
 <div class="col-md-4">
 	<div class="blog">
 		<a href="${pageContext.request.contextPath}/index.html" style="text-decoration:none">
-			<h1><strong>熊平的博客站</strong></h1>
+			<h1><strong>王树轩的博客站</strong></h1>
 		</a>
 	</div>
 </div>
