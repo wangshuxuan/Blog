@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * @Description 博客实体
- * @author xp
+ * @author wangshuxuan
  *
  */
 public class Blog {

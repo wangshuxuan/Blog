@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * @Author xp
  * @Description 评论实体类
- * @Date 2017/4/19 23:10
+ * @Date 2018/8/20
  */
 public class Comment {
 

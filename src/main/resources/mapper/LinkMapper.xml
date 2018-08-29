@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="ssm.blog.dao.LinkDao">
+<mapper namespace="ssm.blog.dao.LinkMapper">
     <resultMap id="LinkResultMap" type="Link">
         <id property="id" column="id"/>
         <result property="linkName" column="link_name"/>
@@ -11,9 +11,8 @@
     <select id="getTotalData" resultMap="LinkResultMap">
         SELECT * from t_link ORDER BY order_num
     </select>
-    <select id="listByPage" resultMap="LinkResultMap">
+    <select id="list" resultMap="LinkResultMap">
         SELECT * FROM  t_link ORDER BY order_num
-        LIMIT #{start},#{end}
     </select>
     <select id="getTotalCount" resultType="java.lang.Long">
         SELECT count(*) FROM  t_link

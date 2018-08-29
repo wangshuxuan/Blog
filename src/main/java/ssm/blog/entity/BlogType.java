@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import java.io.Serializable;
 
 /**
- * Created by xp on 2017/4/14.
+ * Created by xp on 2018/8/20.
  * @author xp
  * @Description 博客类别实体类
  */

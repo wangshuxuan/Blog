@@ -1,9 +1,9 @@
 package ssm.blog.entity;
 
 /**
- * @Author xp
+ * @Author wangshuxuan
  * @Description 友情链接实体类
- * @Date 2017/4/20 13:45
+ * @Date 2018/8/20 13:45
  */
 public class Link {
 

@@ -12,6 +12,7 @@
 <script src="${pageContext.request.contextPath}/static/bootstrap3/js/jquery-1.11.2.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/bootstrap3/js/bootstrap.min.js"></script>
 <title>博客主页</title>
+<link rel="shortcut icon" type="image/x-icon" href="${blog}/static/userImages/favicon.ico" />
 <style type="text/css">
 	body{
 		padding-top:10px;
