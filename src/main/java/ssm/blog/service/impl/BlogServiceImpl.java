@@ -9,7 +9,9 @@ import ssm.blog.entity.Blog;
 import ssm.blog.service.BlogService;
 import ssm.blog.utils.DatagridResult;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author wangshuxuan
@@ -37,6 +39,17 @@ public class BlogServiceImpl implements BlogService {
         result.setRows(list);
         return result;
     }
+
+    public PageInfo<Blog> listBlogByPage(Integer page, Integer rows, String typeId, String releaseDateStr) {
+        Map<String,String> map = new HashMap<String, String>();
+        map.put("typeId", typeId);
+        map.put("releaseDateStr", releaseDateStr);
+        PageHelper.startPage(page, rows);
+        List<Blog> list = blogMapper.listBlogByParam(map);
+        PageInfo<Blog> pageInfo = new PageInfo<Blog>(list,3);
+        return pageInfo;
+    }
+
 
     public void deleteBlogByIds(String ids) {
         String[] idStr = ids.split(",");

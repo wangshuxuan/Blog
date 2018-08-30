@@ -45,6 +45,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         </where>
     </select>
 
+    <select id="listBlogByParam" parameterType="Map" resultMap="BlogResult">
+        SELECT * FROM t_blog
+        <where>
+            <if test="typeId!=null and typeId!=''">
+                and type_id=#{typeId}
+            </if>
+            <if test="releaseDateStr!=null and releaseDateStr!=''">
+                and DATE_FORMAT(releaseDate,'%Y年%m月')=#{releaseDateStr}
+            </if>
+        </where>
+    </select>
+
 	
 	<select id="getBlogByTypeId" parameterType="Integer" resultType="Integer">
 		select count(*) from t_blog where type_id=#{typeId}

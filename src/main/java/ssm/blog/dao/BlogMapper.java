@@ -3,6 +3,7 @@ package ssm.blog.dao;
 import ssm.blog.entity.Blog;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author wangshuxuan
@@ -22,4 +23,6 @@ public interface BlogMapper {
     Blog getById(Integer id);
 
     void updateBlog(Blog blog);
+
+    List<Blog> listBlogByParam(Map<String,String> map);
 }

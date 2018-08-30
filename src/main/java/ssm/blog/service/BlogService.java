@@ -1,7 +1,10 @@
 package ssm.blog.service;
 
+import com.github.pagehelper.PageInfo;
 import ssm.blog.entity.Blog;
 import ssm.blog.utils.DatagridResult;
+
+import java.util.List;
 
 /**
  * @author wangshuxuan
@@ -12,6 +15,8 @@ public interface BlogService {
     void addBlog(Blog blog);
 
     DatagridResult listBlogByPage(Integer page, Integer rows, String title);
+
+    PageInfo<Blog> listBlogByPage(Integer page, Integer rows, String typeId, String releaseDateStr);
 
     void deleteBlogByIds(String ids);
 
