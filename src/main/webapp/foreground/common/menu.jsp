@@ -19,10 +19,10 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	      	<li><a class="navbar-brand" href="${pageContext.request.contextPath}/index.html" onclick="changeClass(this)">博客首页</a></li>
-	        <li><a class="navbar-brand" href="${pageContext.request.contextPath}/blogger/aboutme.html" onclick="changeClass(this)">关于博主</a></li>
-	        <li><a class="navbar-brand" href="${pageContext.request.contextPath}/blogger/myalbum.html" onclick="changeClass(this)">我的相册</a></li>
-	        <li><a class="navbar-brand" href="${pageContext.request.contextPath}/blogger/resource.html" onclick="changeClass(this)">资源小站</a></li>
+	      	<li><a class="navbar-brand" href="${pageContext.request.contextPath}/index.do" onclick="changeClass(this)">博客首页</a></li>
+	        <li><a class="navbar-brand" href="${pageContext.request.contextPath}/foreground/blogger/bloggerInfo.jsp" onclick="changeClass(this)">关于博主</a></li>
+	        <li><a class="navbar-brand" href="${pageContext.request.contextPath}/foreground/blogger/myAlbum.jsp" onclick="changeClass(this)">我的相册</a></li>
+	        <li><a class="navbar-brand" href="${pageContext.request.contextPath}/foreground/blogger/resource.jsp" onclick="changeClass(this)">资源小站</a></li>
 	        <li><a class="navbar-brand" href="http://blog.csdn.net/xp541130126" target="blank">我的CSDN</a></li>
 	      </ul>
 	      <form action="${pageContext.request.contextPath}/blog/search.html" class="navbar-form navbar-right" role="search" method="post" onsubmit="return checkData()">

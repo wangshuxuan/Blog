@@ -26,7 +26,7 @@
 		<ul>
 			<c:forEach items="${blogTypeList }" var="blogType">
 				<li><span> <a
-						href="${pageContext.request.contextPath}/index.html?typeId=${blogType.id }">${blogType.typeName }（${blogType.blogCount }）
+						href="${pageContext.request.contextPath}/index.do?typeId=${blogType.id }">${blogType.typeName }（${blogType.blogCount }）
 					</a></span></li>
 			</c:forEach>
 		</ul>
@@ -43,7 +43,7 @@
 		<ul>
 			<c:forEach items="${blogTimeList }" var="blog">
 				<li><span> <a
-						href="${pageContext.request.contextPath}/index.html?releaseDateStr=${blog.releaseDateStr }">${blog.releaseDateStr }（${blog.blogCount }）
+						href="${pageContext.request.contextPath}/index.do?releaseDateStr=${blog.releaseDateStr }">${blog.releaseDateStr }（${blog.blogCount }）
 					</a></span></li>
 			</c:forEach>
 		</ul>
