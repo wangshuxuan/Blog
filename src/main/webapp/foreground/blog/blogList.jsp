@@ -12,7 +12,7 @@
                 <li style="margin-bottom: 30px">
 					  	<span class="title">
 					  		<img alt="文章类型" src="${pageContext.request.contextPath}/static/userImages/yuan.jpg">
-					  		<a href="${pageContext.request.contextPath}/blog/articles/${blog.id}.html">${blog.title }</a>
+					  		<a href="${pageContext.request.contextPath}/blog/articles/${blog.id}">${blog.title }</a>
 					  	</span>
                     <span class="summary">摘要: ${blog.summary }....</span>
                     <span class="img">

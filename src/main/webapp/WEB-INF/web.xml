@@ -41,12 +41,9 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcherServlet</servlet-name>
-        <url-pattern>*.do</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>dispatcherServlet</servlet-name>
-        <url-pattern>*.html</url-pattern>
-    </servlet-mapping>
+  
     <!--&lt;!&ndash; 添加shiro过滤器 &ndash;&gt;
     <filter>
         <filter-name>shiroFilter</filter-name>

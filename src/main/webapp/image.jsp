@@ -21,7 +21,7 @@ java.awt.image.*,java.util.*,javax.imageio.*"
 	int width = 60, height = 20;
 	BufferedImage images = new BufferedImage(width, height,
 			BufferedImage.TYPE_INT_RGB);
-	Graphics g = image.getGraphics();
+	Graphics g = images.getGraphics();
 	Random random = new Random();
 	g.setColor(getRandColor(200, 250));
 	g.fillRect(0, 0, width, height);
@@ -45,5 +45,5 @@ java.awt.image.*,java.util.*,javax.imageio.*"
 	// 将验证码存入SESSION
 	session.setAttribute("sRand", sRand);
 	g.dispose();
-	ImageIO.write(image, "JPEG", response.getOutputStream());
+	ImageIO.write(images, "JPEG", response.getOutputStream());
 %>

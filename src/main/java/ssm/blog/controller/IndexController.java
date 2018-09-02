@@ -29,7 +29,7 @@ public class IndexController {
     @Autowired
     private BlogService blogService;
 
-    @RequestMapping(value = "/index.do")
+    @RequestMapping(value = "/index")
     public String index ( @RequestParam(value = "page", defaultValue = "1") String page,
                                 @RequestParam(value = "typeId", required = false) String typeId,
                                 @RequestParam(value = "releaseDateStr", required = false) String releaseDateStr,

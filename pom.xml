@@ -18,6 +18,12 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
         <!-- 添加jstl支持 -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -250,7 +256,7 @@
                 <version>2.2</version>
                 <configuration>
                     <!-- 指定端口 -->
-                    <port>8081</port>
+                    <port>8080</port>
                     <!-- 请求路径 -->
                     <path>/</path>
                 </configuration>
