@@ -7,7 +7,7 @@
         <result property="content" column="content"/>
         <result property="commentDate" column="comment_date"/>
         <result property="state" column="state"/>
-        <association property="blog" column="blog_id" select="ssm.blog.dao.BlogDao.getById"/>
+        <association property="blog" column="blog_id" select="ssm.blog.dao.BlogMapper.getById"/>
     </resultMap>
 
     <select id="listByPage" parameterType="java.util.Map" resultMap="CommentResultMap">

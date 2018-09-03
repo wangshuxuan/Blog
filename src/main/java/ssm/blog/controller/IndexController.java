@@ -64,6 +64,7 @@ public class IndexController {
 
         request.setAttribute("pageInfo", pageInfo);
         request.setAttribute("title", "博客主页");
+        request.setAttribute("commonPage", "/foreground/blog/blogList.jsp");
 
         return "mainTemp";
     }

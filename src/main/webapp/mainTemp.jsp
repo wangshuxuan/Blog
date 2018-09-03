@@ -40,7 +40,7 @@
 				
 		<div class="row">		  	  
 			  <div class="col-xs-9">
-				  <jsp:include page="foreground/blog/blogList.jsp"/>
+				  <jsp:include page="${commonPage}"/>
 			  </div>
 			  <div class="col-xs-3">
 				  <jsp:include page="/foreground/blog/rightList.jsp"/>		  	
