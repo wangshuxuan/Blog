@@ -33,7 +33,7 @@
 						alert("评论已提交成功，博主审核后添加");
 						window.location.reload();
 					} else {
-						alert(result.errorInfo);
+						alert(result.message);
 					}
 				},"json");
 		}

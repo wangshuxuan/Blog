@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import ssm.blog.entity.Blog;
+import ssm.blog.entity.Comment;
 import ssm.blog.service.BlogService;
 
 import java.util.Arrays;
@@ -29,6 +30,9 @@ public class BlogController {
 	@Autowired
 	private BlogService blogService;
 	
+	@Autowired
+	private CommentService commentService;
+	
 	@RequestMapping("/articles/{id}")
 	public String showBlogInfo(@PathVariable("id") Integer id, HttpServletRequest request) {
 		Blog blog = blogService.getBlogToShowById(id);
@@ -42,6 +46,13 @@ public class BlogController {
         }else {
             request.setAttribute("keyWords", null);
         }
+        
+        //阅读数量
+        blog.setClickHit(blog.getClickHit()+1);
+        blogService.updateBlog(blog);
+        //获取评论
+        List<Comment> commentList = commentService.getCommentByBlogId(id);
+        request.setAttribute("commentList", commentList);
         request.setAttribute("blog", blog);
         request.setAttribute("commonPage", "/foreground/blog/blogDetail.jsp");
 		return "mainTemp";

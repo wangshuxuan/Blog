@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  * Created by xp on 2018/8/20.
- * @author xp
+ * @author wsx
  * @Description 博客类别实体类
  */
 public class BlogType implements Serializable{

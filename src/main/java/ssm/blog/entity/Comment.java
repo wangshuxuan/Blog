@@ -3,7 +3,7 @@ package ssm.blog.entity;
 import java.util.Date;
 
 /**
- * @Author xp
+ * @Author wsx
  * @Description 评论实体类
  * @Date 2018/8/20
  */
