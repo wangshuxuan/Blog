@@ -39,6 +39,7 @@
                     <list>
                         <value>WriteMapNullValue</value>
                         <value>QuoteFieldNames</value>
+                        <value>DisableCircularReferenceDetect</value>
                     </list>
                 </property>
             </bean>

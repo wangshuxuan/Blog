@@ -3,6 +3,7 @@ package ssm.blog.controller;
 import java.util.List;
 
 import ssm.blog.entity.Comment;
+import ssm.blog.utils.DatagridResult;
 
 /**
  * 
@@ -18,4 +19,9 @@ public interface CommentService {
 
 	List<Comment> getCommentByBlogId(Integer id);
 
+    DatagridResult listByPage(Integer page, Integer rows, Integer state);
+
+    void reviewComment(String ids, Integer state);
+
+    void deleteComment(String ids);
 }

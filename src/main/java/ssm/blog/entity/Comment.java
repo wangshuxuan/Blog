@@ -1,5 +1,7 @@
 package ssm.blog.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.util.Date;
 
 /**
@@ -12,6 +14,7 @@ public class Comment {
     private Integer id;         //id
     private String userIp;      //评论者ip
     private String content;     //评论内容
+    @JSONField(format="yyyy-MM-dd")
     private Date commentDate;   //评论日期
     private Integer state;      //审核状态  0待审核 1通过 2未通过
     private Blog blog;          //所评论博客

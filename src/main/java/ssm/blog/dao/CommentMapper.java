@@ -17,6 +17,11 @@ public interface CommentMapper {
 	void saveComment(Comment comment);
 
 	List<Comment> queryByBlogId(Integer id);
-	
-	
+
+
+    List<Comment> listByPage(Integer state);
+
+	void updateComment(Comment comment);
+
+	void deleteComment(int i);
 }

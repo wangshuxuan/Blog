@@ -10,20 +10,14 @@
         <association property="blog" column="blog_id" select="ssm.blog.dao.BlogMapper.getById"/>
     </resultMap>
 
-    <select id="listByPage" parameterType="java.util.Map" resultMap="CommentResultMap">
+    <select id="listByPage" parameterType="String" resultMap="CommentResultMap">
         SELECT * from t_comment
         <where>
-            <if test="blogId!=null">
-                and blog_id=#{blogId}
-            </if>
-            <if test="state!=null">
+            <if test="_parameter!=null and _parameter!=''">
                 and state=#{state}
             </if>
         </where>
         ORDER BY comment_date DESC
-        <if test="start!=null and pageSize!=null">
-            limit #{start},#{end}
-        </if>
     </select>
 
     <select id="getById" parameterType="java.lang.Integer" resultMap="CommentResultMap">
